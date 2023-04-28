@@ -1,6 +1,7 @@
 #####  Projet_Flask
                       
-    L’objectif final de ce projet est de récupérer les flux RSS et d’afficher les articles contenus dans une application web flask
+    Cette application web flask projet récupére les flux RSS dans un fichier JSON et afficher les articles.
+
 
 
 
