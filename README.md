@@ -2,3 +2,6 @@
 Projet_Flask
 
 
+flask --app RSS run 
+
+
