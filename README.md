@@ -2,6 +2,7 @@
 Projet_Flask
 
 
-flask --app RSS run 
+``` flask --app RSS run ````
+
 
 
