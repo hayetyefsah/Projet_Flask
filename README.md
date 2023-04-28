@@ -12,8 +12,9 @@ Le fichier Json qui contient tout les flus RSS est : liens.json
 
 ``` pip install flask ```
 
+## Excution de l'application 
 
-
+Pour excuter l'application il faut taper cette commande sur le terminal.
 
 ``` flask --app RSS run ```
 
