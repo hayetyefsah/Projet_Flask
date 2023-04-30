@@ -1,11 +1,13 @@
- 
 import feedparser
 from json import load
 from flask import Flask, render_template, redirect, url_for
 
+
+#Extraire les informations du fichier qui contient les flux RSS( liens.json).
 with open('liens.json') as f:
     FEEDS=load(f)
 
+#Fonction qui extrait les liens URL des flux RSS
 def entry(lien):
     list=[]
     NewsFeed = feedparser.parse(lien)
@@ -14,39 +16,21 @@ def entry(lien):
         list.append(entry[i].link)
     return(list)
 
-def title(lien):
-    name=[]
-    NewsFeed = feedparser.parse(lien)
-    entry = NewsFeed.entries
-    for i in range(len(entry)):
-        name.append(entry[i].title)
-
-    return(name)
-
 app = Flask(__name__)
 
+
+
+
+#Route pour chaque flux qui permet d'avoir accés aux liens du flux sélectionné
 @app.route('/<FLUX>')
+
 def RSS(FLUX):
-    list_1=[]
     entries= entry(FEEDS[FLUX]) 
-    titles=title(FEEDS[FLUX])
-    
-    for i in range (len(entries)):
-        list_1.append("<ul><li><a href= {} > {}</a></li></ul> ".format(entries[i],titles[i]))
-    return """  <!DOCTYPE html>
-                <html>
-                <head>
-                <title>title</title>
-                </head>
-                <body>  
-                <h1> Les liens du flux rss</h1>
-                <p> {}</p>
-                </body>
+    return render_template("index1.html",entries=entries)
 
-                </html>
-                """.format('\n'.join(list_1))
-
+#Route qui permet d'avoir accés à l'accueil où il y a la liste des flux RSS( liens.json)
 @app.route("/")
+
 def liens():
     return render_template("index.html",FEEDS = FEEDS,RSS=RSS)
 

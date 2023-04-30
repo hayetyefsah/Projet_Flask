@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>           
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+        <title>Flux RSS</title>
+    </head>
+    <body>  
+    <center>
+        <h1>Les liens du flux RSS</h1>
+    </center>
+    <p style="float:right"><img src="https://lh6.googleusercontent.com/-8KOz2GzbPlo/TYpw5sFFLbI/AAAAAAAAAoc/uZgOPxD4hFs/s1600/Newspaper_Feed_512x512.png" ></p>
+
+        <p> 
+            {%for lien in entries%}
+            
+            <p><a href="{{ lien}}">{{ lien}}</a></p>
+            
+            {%endfor%}
+        </p>
+
+    </body>
+
+</html>

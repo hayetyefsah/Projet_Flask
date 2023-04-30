@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-  
 <html>
-<head>
-    <title>For loop in Flask</title>
-</head>
+
+    
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+        <title>Flux RSS</title>
+    </head>
+
 <body>
-  
+    <center>
+ <h1> Les flux RSS</h1> 
+    </center>
+<p style="float:right"><img src="https://lh6.googleusercontent.com/-8KOz2GzbPlo/TYpw5sFFLbI/AAAAAAAAAoc/uZgOPxD4hFs/s1600/Newspaper_Feed_512x512.png" ></p>
 <ol>
 <!-- For loop logic of jinja template -->
 {%for flux_rss in FEEDS%}
-
-    <p><a href="/{{ flux_rss }}">{{ flux_rss }}</a></p>
+    
+<p><a href="/{{ flux_rss }}">{{ flux_rss }}</a></p>
 
 {%endfor%}
   

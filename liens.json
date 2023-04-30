@@ -1,4 +1,5 @@
 {
-    "audioramax": "http://www.audiodramax.com/feed",
-    "lepodcast": "https://valnuit.lepodcast.fr/rss"
+    "Audioramax": "http://www.audiodramax.com/feed",
+    "Lepodcast": "https://valnuit.lepodcast.fr/rss",
+    "Zenika":"https://blog.zenika.com/feed/"
 }
